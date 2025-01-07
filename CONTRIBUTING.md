@@ -1,8 +1,8 @@
-<!-- DANSWER_METADATA={"link": "https://github.com/onyx-dot-app/onyx/blob/main/CONTRIBUTING.md"} -->
+<!-- DANSWER_METADATA={"link": "https://github.com/recap-dot-work/recap/blob/main/CONTRIBUTING.md"} -->
 
-# Contributing to Onyx
+# Contributing to RECAP
 
-Hey there! We are so excited that you're interested in Onyx.
+Hey there! We are so excited that you're interested in RECAP.
 
 As an open source project in a rapidly changing space, we welcome all contributions.
 
@@ -10,17 +10,17 @@ As an open source project in a rapidly changing space, we welcome all contributi
 
 ### Contribution Opportunities
 
-The [GitHub Issues](https://github.com/onyx-dot-app/onyx/issues) page is a great place to start for contribution ideas.
+The [GitHub Issues](https://github.com/recap-dot-work/recap/issues) page is a great place to start for contribution ideas.
 
 Issues that have been explicitly approved by the maintainers (aligned with the direction of the project)
 will be marked with the `approved by maintainers` label.
 Issues marked `good first issue` are an especially great place to start.
 
 **Connectors** to other tools are another great place to contribute. For details on how, refer to this
-[README.md](https://github.com/onyx-dot-app/onyx/blob/main/backend/onyx/connectors/README.md).
+[README.md](https://github.com/recap-dot-work/recap/blob/main/backend/recap/connectors/README.md).
 
 If you have a new/different contribution in mind, we'd love to hear about it!
-Your input is vital to making sure that Onyx moves in the right direction.
+Your input is vital to making sure that RECAP moves in the right direction.
 Before starting on implementation, please raise a GitHub issue.
 
 And always feel free to message us (Chris Weaver / Yuhong Sun) on
@@ -50,7 +50,7 @@ We would love to see you there!
 
 ## Get Started 🚀
 
-Onyx being a fully functional app, relies on some external software, specifically:
+RECAP being a fully functional app, relies on some external software, specifically:
 
 - [Postgres](https://www.postgresql.org/) (Relational DB)
 - [Vespa](https://vespa.ai/) (Vector DB/Search Engine)
@@ -58,8 +58,8 @@ Onyx being a fully functional app, relies on some external software, specificall
 - [Nginx](https://nginx.org/) (Not needed for development flows generally)
 
 > **Note:**
-> This guide provides instructions to build and run Onyx locally from source with Docker containers providing the above external software. We believe this combination is easier for
-> development purposes. If you prefer to use pre-built container images, we provide instructions on running the full Onyx stack within Docker below.
+> This guide provides instructions to build and run RECAP locally from source with Docker containers providing the above external software. We believe this combination is easier for
+> development purposes. If you prefer to use pre-built container images, we provide instructions on running the full RECAP stack within Docker below.
 
 ### Local Set Up
 
@@ -80,8 +80,8 @@ source .venv/bin/activate
 ```
 
 > **Note:**
-> This virtual environment MUST NOT be set up WITHIN the onyx directory if you plan on using mypy within certain IDEs.
-> For simplicity, we recommend setting up the virtual environment outside of the onyx directory.
+> This virtual environment MUST NOT be set up WITHIN the recap directory if you plan on using mypy within certain IDEs.
+> For simplicity, we recommend setting up the virtual environment outside of the recap directory.
 
 _For Windows, activate the virtual environment using Command Prompt:_
 
@@ -98,10 +98,10 @@ If using PowerShell, the command slightly differs:
 Install the required python dependencies:
 
 ```bash
-pip install -r onyx/backend/requirements/default.txt
-pip install -r onyx/backend/requirements/dev.txt
-pip install -r onyx/backend/requirements/ee.txt
-pip install -r onyx/backend/requirements/model_server.txt
+pip install -r recap/backend/requirements/default.txt
+pip install -r recap/backend/requirements/dev.txt
+pip install -r recap/backend/requirements/ee.txt
+pip install -r recap/backend/requirements/model_server.txt
 ```
 
 Install Playwright for Python (headless browser required by the Web Connector)
@@ -117,7 +117,7 @@ You may have to deactivate and reactivate your virtualenv for `playwright` to ap
 #### Frontend: Node dependencies
 
 Install [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for the frontend.
-Once the above is done, navigate to `onyx/web` run:
+Once the above is done, navigate to `recap/web` run:
 
 ```bash
 npm i
@@ -127,24 +127,24 @@ npm i
 
 You will need Docker installed to run these containers.
 
-First navigate to `onyx/deployment/docker_compose`, then start up Postgres/Vespa/Redis with:
+First navigate to `recap/deployment/docker_compose`, then start up Postgres/Vespa/Redis with:
 
 ```bash
-docker compose -f docker-compose.dev.yml -p onyx-stack up -d index relational_db cache
+docker compose -f docker-compose.dev.yml -p recap-stack up -d index relational_db cache
 ```
 
 (index refers to Vespa, relational_db refers to Postgres, and cache refers to Redis)
 
 #### Running Onyx locally
 
-To start the frontend, navigate to `onyx/web` and run:
+To start the frontend, navigate to `recap/web` and run:
 
 ```bash
 npm run dev
 ```
 
 Next, start the model server which runs the local NLP models.
-Navigate to `onyx/backend` and run:
+Navigate to `recap/backend` and run:
 
 ```bash
 uvicorn model_server.main:app --reload --port 9000
@@ -156,10 +156,10 @@ _For Windows (for compatibility with both PowerShell and Command Prompt):_
 powershell -Command "uvicorn model_server.main:app --reload --port 9000"
 ```
 
-The first time running Onyx, you will need to run the DB migrations for Postgres.
+The first time running RECAP, you will need to run the DB migrations for Postgres.
 After the first time, this is no longer required unless the DB models change.
 
-Navigate to `onyx/backend` and with the venv active, run:
+Navigate to `recap/backend` and with the venv active, run:
 
 ```bash
 alembic upgrade head
@@ -168,16 +168,16 @@ alembic upgrade head
 Next, start the task queue which orchestrates the background jobs.
 Jobs that take more time are run async from the API server.
 
-Still in `onyx/backend`, run:
+Still in `recap/backend`, run:
 
 ```bash
 python ./scripts/dev_run_background_jobs.py
 ```
 
-To run the backend API server, navigate back to `onyx/backend` and run:
+To run the backend API server, navigate back to `recap/backend` and run:
 
 ```bash
-AUTH_TYPE=disabled uvicorn onyx.main:app --reload --port 8080
+AUTH_TYPE=disabled uvicorn recap.main:app --reload --port 8080
 ```
 
 _For Windows (for compatibility with both PowerShell and Command Prompt):_
@@ -201,26 +201,26 @@ You should now have 4 servers running:
 - Model server
 - Background jobs
 
-Now, visit `http://localhost:3000` in your browser. You should see the Onyx onboarding wizard where you can connect your external LLM provider to Onyx.
+Now, visit `http://localhost:3000` in your browser. You should see the RECAP onboarding wizard where you can connect your external LLM provider to RECAP.
 
-You've successfully set up a local Onyx instance! 🏁
+You've successfully set up a local RECAP instance! 🏁
 
 #### Running the Onyx application in a container
 
-You can run the full Onyx application stack from pre-built images including all external software dependencies.
+You can run the full RECAP application stack from pre-built images including all external software dependencies.
 
-Navigate to `onyx/deployment/docker_compose` and run:
+Navigate to `recap/deployment/docker_compose` and run:
 
 ```bash
-docker compose -f docker-compose.dev.yml -p onyx-stack up -d
+docker compose -f docker-compose.dev.yml -p recap-stack up -d
 ```
 
-After Docker pulls and starts these containers, navigate to `http://localhost:3000` to use Onyx.
+After Docker pulls and starts these containers, navigate to `http://localhost:3000` to use RECAP.
 
-If you want to make changes to Onyx and run those changes in Docker, you can also build a local version of the Onyx container images that incorporates your changes like so:
+If you want to make changes to RECAP and run those changes in Docker, you can also build a local version of the RECAP container images that incorporates your changes like so:
 
 ```bash
-docker compose -f docker-compose.dev.yml -p onyx-stack up -d --build
+docker compose -f docker-compose.dev.yml -p recap-stack up -d --build
 ```
 
 ### Formatting and Linting
@@ -237,25 +237,25 @@ With the virtual environment active, install the pre-commit library with:
 pip install pre-commit
 ```
 
-Then, from the `onyx/backend` directory, run:
+Then, from the `recap/backend` directory, run:
 
 ```bash
 pre-commit install
 ```
 
 Additionally, we use `mypy` for static type checking.
-Onyx is fully type-annotated, and we want to keep it that way!
-To run the mypy checks manually, run `python -m mypy .` from the `onyx/backend` directory.
+RECAP is fully type-annotated, and we want to keep it that way!
+To run the mypy checks manually, run `python -m mypy .` from the `recap/backend` directory.
 
 #### Web
 
-We use `prettier` for formatting. The desired version (2.8.8) will be installed via a `npm i` from the `onyx/web` directory.
-To run the formatter, use `npx prettier --write .` from the `onyx/web` directory.
+We use `prettier` for formatting. The desired version (2.8.8) will be installed via a `npm i` from the `recap/web` directory.
+To run the formatter, use `npx prettier --write .` from the `recap/web` directory.
 Please double check that prettier passes before creating a pull request.
 
 ### Release Process
 
-Onyx loosely follows the SemVer versioning standard.
+RECAP loosely follows the SemVer versioning standard.
 Major changes are released with a "minor" version bump. Currently we use patch release versions to indicate small feature changes.
 A set of Docker containers will be pushed automatically to DockerHub with every tag.
-You can see the containers [here](https://hub.docker.com/search?q=onyx%2F).
+You can see the containers [here](https://hub.docker.com/search?q=recap%2F).

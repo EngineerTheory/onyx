@@ -3,8 +3,8 @@ from collections.abc import Callable
 from unittest.mock import MagicMock
 from unittest.mock import patch
 
-from onyx.connectors.google_drive.connector import GoogleDriveConnector
-from onyx.connectors.models import Document
+from recap.connectors.google_drive.connector import GoogleDriveConnector
+from recap.connectors.models import Document
 from tests.daily.connectors.google_drive.consts_and_utils import ADMIN_FOLDER_3_FILE_IDS
 from tests.daily.connectors.google_drive.consts_and_utils import (
     assert_retrieved_docs_match_expected,

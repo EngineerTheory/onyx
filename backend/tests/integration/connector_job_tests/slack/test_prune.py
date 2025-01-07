@@ -5,9 +5,9 @@ from typing import Any
 
 import pytest
 
-from onyx.connectors.models import InputType
-from onyx.db.enums import AccessType
-from onyx.server.documents.models import DocumentSource
+from recap.connectors.models import InputType
+from recap.db.enums import AccessType
+from recap.server.documents.models import DocumentSource
 from tests.integration.common_utils.managers.cc_pair import CCPairManager
 from tests.integration.common_utils.managers.connector import ConnectorManager
 from tests.integration.common_utils.managers.credential import CredentialManager
@@ -34,12 +34,12 @@ def test_slack_prune(
 
     # Creating an admin user (first user created is automatically an admin)
     admin_user: DATestUser = UserManager.create(
-        email="admin@onyx-test.com",
+        email="admin@recap-test.com",
     )
 
     # Creating a non-admin user
     test_user_1: DATestUser = UserManager.create(
-        email="test_user_1@onyx-test.com",
+        email="test_user_1@recap-test.com",
     )
 
     slack_client = SlackManager.get_slack_client(os.environ["SLACK_BOT_TOKEN"])

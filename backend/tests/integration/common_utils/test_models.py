@@ -5,11 +5,11 @@ from uuid import UUID
 from pydantic import BaseModel
 from pydantic import Field
 
-from onyx.auth.schemas import UserRole
-from onyx.context.search.enums import RecencyBiasSetting
-from onyx.db.enums import AccessType
-from onyx.server.documents.models import DocumentSource
-from onyx.server.documents.models import InputType
+from recap.auth.schemas import UserRole
+from recap.context.search.enums import RecencyBiasSetting
+from recap.db.enums import AccessType
+from recap.server.documents.models import DocumentSource
+from recap.server.documents.models import InputType
 
 """
 These data models are used to represent the data on the testing side of things.

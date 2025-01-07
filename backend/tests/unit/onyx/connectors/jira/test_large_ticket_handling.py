@@ -7,7 +7,7 @@ import pytest
 from jira.resources import Issue
 from pytest_mock import MockFixture
 
-from onyx.connectors.onyx_jira.connector import fetch_jira_issues_batch
+from recap.connectors.onyx_jira.connector import fetch_jira_issues_batch
 
 
 @pytest.fixture

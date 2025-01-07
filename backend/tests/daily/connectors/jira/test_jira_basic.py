@@ -3,8 +3,8 @@ import time
 
 import pytest
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.onyx_jira.connector import JiraConnector
+from recap.configs.constants import DocumentSource
+from recap.connectors.onyx_jira.connector import JiraConnector
 
 
 @pytest.fixture

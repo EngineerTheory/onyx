@@ -9,12 +9,12 @@ from sqlalchemy.orm import Session
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from onyx.context.search.models import IndexFilters  # noqa: E402
-from onyx.document_index.interfaces import VespaChunkRequest  # noqa: E402
-from onyx.db.engine import get_session_context_manager  # noqa: E402
-from onyx.db.document import delete_documents_complete__no_commit  # noqa: E402
-from onyx.db.search_settings import get_current_search_settings  # noqa: E402
-from onyx.document_index.vespa.index import VespaIndex  # noqa: E402
+from recap.context.search.models import IndexFilters  # noqa: E402
+from recap.document_index.interfaces import VespaChunkRequest  # noqa: E402
+from recap.db.engine import get_session_context_manager  # noqa: E402
+from recap.db.document import delete_documents_complete__no_commit  # noqa: E402
+from recap.db.search_settings import get_current_search_settings  # noqa: E402
+from recap.document_index.vespa.index import VespaIndex  # noqa: E402
 
 BATCH_SIZE = 100
 

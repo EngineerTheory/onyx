@@ -10,7 +10,7 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.dialects.postgresql import ENUM
-from onyx.configs.constants import DocumentSource
+from recap.configs.constants import DocumentSource
 
 # revision identifiers, used by Alembic.
 revision = "b156fa702355"

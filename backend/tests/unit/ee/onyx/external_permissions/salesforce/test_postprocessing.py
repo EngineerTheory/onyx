@@ -1,11 +1,11 @@
 from datetime import datetime
 
-from ee.onyx.external_permissions.salesforce.postprocessing import (
+from ee.recap.external_permissions.salesforce.postprocessing import (
     censor_salesforce_chunks,
 )
-from onyx.configs.app_configs import BLURB_SIZE
-from onyx.configs.constants import DocumentSource
-from onyx.context.search.models import InferenceChunk
+from recap.configs.app_configs import BLURB_SIZE
+from recap.configs.constants import DocumentSource
+from recap.context.search.models import InferenceChunk
 
 
 def create_test_chunk(

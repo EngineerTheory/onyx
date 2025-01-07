@@ -67,4 +67,4 @@ If you need to customize the widget, you can modify the `ChatWidget` component i
 
 By following these steps, you should be able to get the chat widget working on your webpage.
 
-If you want to get fancier, then take a peek at the Chat implementation within Onyx itself [here](https://github.com/onyx-dot-app/onyx/blob/main/web/src/app/chat/ChatPage.tsx#L82).
+If you want to get fancier, then take a peek at the Chat implementation within RECAP itself [here](https://github.com/recap-dot-work/recap/blob/main/web/src/app/chat/ChatPage.tsx#L82).

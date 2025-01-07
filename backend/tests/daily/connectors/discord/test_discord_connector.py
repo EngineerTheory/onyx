@@ -3,8 +3,8 @@ import time
 
 import pytest
 
-from onyx.connectors.discord.connector import DiscordConnector
-from onyx.connectors.models import Document
+from recap.connectors.discord.connector import DiscordConnector
+from recap.connectors.models import Document
 
 
 @pytest.fixture

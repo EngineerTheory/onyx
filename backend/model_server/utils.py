@@ -8,7 +8,7 @@ from typing import Any
 from typing import cast
 from typing import TypeVar
 
-from onyx.utils.logger import setup_logger
+from recap.utils.logger import setup_logger
 
 logger = setup_logger()
 

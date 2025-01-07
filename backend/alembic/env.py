@@ -1,12 +1,12 @@
 from typing import Any, Literal
-from onyx.db.engine import get_iam_auth_token
-from onyx.configs.app_configs import USE_IAM_AUTH
-from onyx.configs.app_configs import POSTGRES_HOST
-from onyx.configs.app_configs import POSTGRES_PORT
-from onyx.configs.app_configs import POSTGRES_USER
-from onyx.configs.app_configs import AWS_REGION_NAME
-from onyx.db.engine import build_connection_string
-from onyx.db.engine import get_all_tenant_ids
+from recap.db.engine import get_iam_auth_token
+from recap.configs.app_configs import USE_IAM_AUTH
+from recap.configs.app_configs import POSTGRES_HOST
+from recap.configs.app_configs import POSTGRES_PORT
+from recap.configs.app_configs import POSTGRES_USER
+from recap.configs.app_configs import AWS_REGION_NAME
+from recap.db.engine import build_connection_string
+from recap.db.engine import get_all_tenant_ids
 from sqlalchemy import event
 from sqlalchemy import pool
 from sqlalchemy import text
@@ -20,9 +20,9 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy.sql.schema import SchemaItem
-from onyx.configs.constants import SSL_CERT_FILE
+from recap.configs.constants import SSL_CERT_FILE
 from shared_configs.configs import MULTI_TENANT, POSTGRES_DEFAULT_SCHEMA
-from onyx.db.models import Base
+from recap.db.models import Base
 from celery.backends.database.session import ResultModelBase  # type: ignore
 
 # Alembic Config object

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "recap-stack.fullname" . }}-test-connection"
+  labels:
+    {{- include "recap-stack.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "recap-stack.fullname" . }}-webserver:{{ .Values.webserver.service.port }}']
+  restartPolicy: Never

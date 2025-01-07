@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: indexing-model-server
-          image: onyxdotapp/onyx-model-server:latest
+          image: recapdotwork/recap-model-server:latest
           imagePullPolicy: IfNotPresent
           command:
             [

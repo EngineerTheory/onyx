@@ -11,17 +11,17 @@ Then run test_query_times.py to test query times.
 import random
 from datetime import datetime
 
-from onyx.access.models import DocumentAccess
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.models import Document
-from onyx.db.engine import get_session_context_manager
-from onyx.db.search_settings import get_current_search_settings
-from onyx.document_index.vespa.index import VespaIndex
-from onyx.indexing.indexing_pipeline import IndexBatchParams
-from onyx.indexing.models import ChunkEmbedding
-from onyx.indexing.models import DocMetadataAwareIndexChunk
-from onyx.indexing.models import IndexChunk
-from onyx.utils.timing import log_function_time
+from recap.access.models import DocumentAccess
+from recap.configs.constants import DocumentSource
+from recap.connectors.models import Document
+from recap.db.engine import get_session_context_manager
+from recap.db.search_settings import get_current_search_settings
+from recap.document_index.vespa.index import VespaIndex
+from recap.indexing.indexing_pipeline import IndexBatchParams
+from recap.indexing.models import ChunkEmbedding
+from recap.indexing.models import DocMetadataAwareIndexChunk
+from recap.indexing.models import IndexChunk
+from recap.utils.timing import log_function_time
 from shared_configs.configs import POSTGRES_DEFAULT_SCHEMA
 from shared_configs.model_server_models import Embedding
 

@@ -5,16 +5,16 @@ from unittest.mock import MagicMock
 import pytest
 from langchain_core.messages import SystemMessage
 
-from onyx.chat.models import AnswerStyleConfig
-from onyx.chat.models import CitationConfig
-from onyx.chat.models import LlmDoc
-from onyx.chat.models import PromptConfig
-from onyx.chat.prompt_builder.build import AnswerPromptBuilder
-from onyx.configs.constants import DocumentSource
-from onyx.llm.interfaces import LLMConfig
-from onyx.tools.models import ToolResponse
-from onyx.tools.tool_implementations.search.search_tool import SearchTool
-from onyx.tools.tool_implementations.search_like_tool_utils import (
+from recap.chat.models import AnswerStyleConfig
+from recap.chat.models import CitationConfig
+from recap.chat.models import LlmDoc
+from recap.chat.models import PromptConfig
+from recap.chat.prompt_builder.build import AnswerPromptBuilder
+from recap.configs.constants import DocumentSource
+from recap.llm.interfaces import LLMConfig
+from recap.tools.models import ToolResponse
+from recap.tools.tool_implementations.search.search_tool import SearchTool
+from recap.tools.tool_implementations.search_like_tool_utils import (
     FINAL_CONTEXT_DOCUMENTS_ID,
 )
 

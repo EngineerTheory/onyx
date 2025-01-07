@@ -1,10 +1,10 @@
 from typing import List
 
-from onyx.configs.app_configs import MAX_DOCUMENT_CHARS
-from onyx.connectors.models import Document
-from onyx.connectors.models import DocumentSource
-from onyx.connectors.models import Section
-from onyx.indexing.indexing_pipeline import filter_documents
+from recap.configs.app_configs import MAX_DOCUMENT_CHARS
+from recap.connectors.models import Document
+from recap.connectors.models import DocumentSource
+from recap.connectors.models import Section
+from recap.indexing.indexing_pipeline import filter_documents
 
 
 def create_test_document(

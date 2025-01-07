@@ -9,13 +9,13 @@ from uuid import uuid4
 
 from sqlalchemy.orm import Session
 
-from onyx.db.engine import get_sqlalchemy_engine
-from onyx.db.enums import IndexingStatus
-from onyx.db.index_attempt import create_index_attempt
-from onyx.db.index_attempt import create_index_attempt_error
-from onyx.db.models import IndexAttempt
-from onyx.db.search_settings import get_current_search_settings
-from onyx.server.documents.models import DocumentSource
+from recap.db.engine import get_sqlalchemy_engine
+from recap.db.enums import IndexingStatus
+from recap.db.index_attempt import create_index_attempt
+from recap.db.index_attempt import create_index_attempt_error
+from recap.db.models import IndexAttempt
+from recap.db.search_settings import get_current_search_settings
+from recap.server.documents.models import DocumentSource
 from tests.integration.common_utils.constants import NUM_DOCS
 from tests.integration.common_utils.managers.api_key import APIKeyManager
 from tests.integration.common_utils.managers.cc_pair import CCPairManager

@@ -2,11 +2,11 @@ import datetime
 import json
 import os
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.cross_connector_utils.miscellaneous_utils import time_str_to_utc
-from onyx.connectors.gmail.connector import _build_time_range_query
-from onyx.connectors.gmail.connector import thread_to_document
-from onyx.connectors.models import Document
+from recap.configs.constants import DocumentSource
+from recap.connectors.cross_connector_utils.miscellaneous_utils import time_str_to_utc
+from recap.connectors.gmail.connector import _build_time_range_query
+from recap.connectors.gmail.connector import thread_to_document
+from recap.connectors.models import Document
 
 
 def test_thread_to_document() -> None:

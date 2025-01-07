@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.models import Document
-from onyx.connectors.slab.connector import SlabConnector
+from recap.configs.constants import DocumentSource
+from recap.connectors.models import Document
+from recap.connectors.slab.connector import SlabConnector
 
 
 def load_test_data(file_name: str = "test_slab_data.json") -> dict[str, str]:

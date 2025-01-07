@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: slack-bot
-          image: onyxdotapp/onyx-backend:latest
+          image: recapdotwork/recap-backend:latest
           imagePullPolicy: IfNotPresent
-          command: ["python", "onyxdotapp/onyxbot/slack/listener.py"]
+          command: ["python", "recapdotwork/recapbot/slack/listener.py"]
           ports:
             - containerPort: 8000
           resources:

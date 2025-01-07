@@ -1,6 +1,6 @@
 import pytest
 
-from onyx.indexing.indexing_heartbeat import IndexingHeartbeatInterface
+from recap.indexing.indexing_heartbeat import IndexingHeartbeatInterface
 
 
 class MockHeartbeat(IndexingHeartbeatInterface):

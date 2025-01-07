@@ -5,12 +5,12 @@ from unittest.mock import Mock
 import pytest
 from pytest_mock import MockerFixture
 
-from onyx.chat.answer import Answer
-from onyx.chat.answer import AnswerStream
-from onyx.chat.models import AnswerStyleConfig
-from onyx.chat.models import PromptConfig
-from onyx.tools.force import ForceUseTool
-from onyx.tools.tool_implementations.search.search_tool import SearchTool
+from recap.chat.answer import Answer
+from recap.chat.answer import AnswerStream
+from recap.chat.models import AnswerStyleConfig
+from recap.chat.models import PromptConfig
+from recap.tools.force import ForceUseTool
+from recap.tools.tool_implementations.search.search_tool import SearchTool
 from tests.regression.answer_quality.run_qa import _process_and_write_query_results
 
 

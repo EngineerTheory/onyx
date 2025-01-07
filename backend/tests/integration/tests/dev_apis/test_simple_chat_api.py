@@ -2,7 +2,7 @@ import json
 
 import requests
 
-from onyx.configs.constants import MessageType
+from recap.configs.constants import MessageType
 from tests.integration.common_utils.constants import API_SERVER_URL
 from tests.integration.common_utils.constants import GENERAL_HEADERS
 from tests.integration.common_utils.constants import NUM_DOCS

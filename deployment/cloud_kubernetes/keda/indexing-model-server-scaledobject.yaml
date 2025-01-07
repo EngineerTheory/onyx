@@ -2,7 +2,7 @@ apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
   name: indexing-model-server-scaledobject
-  namespace: onyx
+  namespace: recap
   labels:
     app: indexing-model-server
 spec:

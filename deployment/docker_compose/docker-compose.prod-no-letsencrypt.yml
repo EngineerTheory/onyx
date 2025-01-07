@@ -1,6 +1,6 @@
 services:
   api_server:
-    image: onyxdotapp/onyx-backend:${IMAGE_TAG:-latest}
+    image: recapdotwork/recap-backend:${IMAGE_TAG:-latest}
     build:
       context: ../../backend
       dockerfile: Dockerfile
@@ -75,7 +75,7 @@ services:
         max-file: "6"
 
   web_server:
-    image: onyxdotapp/onyx-web-server:${IMAGE_TAG:-latest}
+    image: recapdotwork/recap-web-server:${IMAGE_TAG:-latest}
     build:
       context: ../../web
       dockerfile: Dockerfile
@@ -101,7 +101,7 @@ services:
         max-file: "6"
 
   inference_model_server:
-    image: onyxdotapp/onyx-model-server:${IMAGE_TAG:-latest}
+    image: recapdotwork/recap-model-server:${IMAGE_TAG:-latest}
     build:
       context: ../../backend
       dockerfile: Dockerfile.model_server

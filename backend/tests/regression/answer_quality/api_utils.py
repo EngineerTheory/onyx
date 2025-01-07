@@ -1,16 +1,16 @@
 import requests
 from retry import retry
 
-from ee.onyx.server.query_and_chat.models import OneShotQARequest
-from onyx.chat.models import ThreadMessage
-from onyx.configs.constants import DocumentSource
-from onyx.configs.constants import MessageType
-from onyx.connectors.models import InputType
-from onyx.context.search.enums import OptionalSearchSetting
-from onyx.context.search.models import IndexFilters
-from onyx.context.search.models import RetrievalDetails
-from onyx.db.enums import IndexingStatus
-from onyx.server.documents.models import ConnectorBase
+from ee.recap.server.query_and_chat.models import OneShotQARequest
+from recap.chat.models import ThreadMessage
+from recap.configs.constants import DocumentSource
+from recap.configs.constants import MessageType
+from recap.connectors.models import InputType
+from recap.context.search.enums import OptionalSearchSetting
+from recap.context.search.models import IndexFilters
+from recap.context.search.models import RetrievalDetails
+from recap.db.enums import IndexingStatus
+from recap.server.documents.models import ConnectorBase
 from tests.regression.answer_quality.cli_utils import get_api_server_host_port
 
 GENERAL_HEADERS = {"Content-Type": "application/json"}

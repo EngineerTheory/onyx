@@ -17,7 +17,7 @@ from model_server.custom_models import warm_up_intent_model
 from model_server.encoders import router as encoders_router
 from model_server.management_endpoints import router as management_router
 from onyx import __version__
-from onyx.utils.logger import setup_logger
+from recap.utils.logger import setup_logger
 from shared_configs.configs import INDEXING_ONLY
 from shared_configs.configs import MIN_THREADS_ML_MODELS
 from shared_configs.configs import MODEL_SERVER_ALLOWED_HOST

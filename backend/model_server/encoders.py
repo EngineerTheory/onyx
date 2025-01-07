@@ -28,7 +28,7 @@ from model_server.constants import DEFAULT_VOYAGE_MODEL
 from model_server.constants import EmbeddingModelTextType
 from model_server.constants import EmbeddingProvider
 from model_server.utils import simple_log_function_time
-from onyx.utils.logger import setup_logger
+from recap.utils.logger import setup_logger
 from shared_configs.configs import API_BASED_EMBEDDING_TIMEOUT
 from shared_configs.configs import INDEXING_ONLY
 from shared_configs.configs import OPENAI_EMBEDDING_TIMEOUT

@@ -2,8 +2,8 @@ from uuid import uuid4
 
 import requests
 
-from onyx.configs.constants import DocumentSource
-from onyx.db.enums import AccessType
+from recap.configs.constants import DocumentSource
+from recap.db.enums import AccessType
 from tests.integration.common_utils.constants import API_SERVER_URL
 from tests.integration.common_utils.constants import GENERAL_HEADERS
 from tests.integration.common_utils.constants import NUM_DOCS

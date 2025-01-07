@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from onyx.connectors.confluence.connector import ConfluenceConnector
+from recap.connectors.confluence.connector import ConfluenceConnector
 
 
 @pytest.fixture

@@ -6,9 +6,9 @@ import pytest
 import requests
 from requests import HTTPError
 
-from onyx.auth.schemas import UserRole
-from onyx.server.documents.models import PaginatedReturn
-from onyx.server.models import FullUserSnapshot
+from recap.auth.schemas import UserRole
+from recap.server.documents.models import PaginatedReturn
+from recap.server.models import FullUserSnapshot
 from tests.integration.common_utils.constants import API_SERVER_URL
 from tests.integration.common_utils.constants import GENERAL_HEADERS
 from tests.integration.common_utils.test_models import DATestUser

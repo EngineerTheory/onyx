@@ -10,7 +10,7 @@ from model_server.constants import MODEL_WARM_UP_STRING
 from model_server.onyx_torch_model import ConnectorClassifier
 from model_server.onyx_torch_model import HybridClassifier
 from model_server.utils import simple_log_function_time
-from onyx.utils.logger import setup_logger
+from recap.utils.logger import setup_logger
 from shared_configs.configs import CONNECTOR_CLASSIFIER_MODEL_REPO
 from shared_configs.configs import CONNECTOR_CLASSIFIER_MODEL_TAG
 from shared_configs.configs import INDEXING_ONLY

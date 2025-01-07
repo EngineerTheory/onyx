@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from onyx.connectors.salesforce.connector import SalesforceConnector
+from recap.connectors.salesforce.connector import SalesforceConnector
 
 
 @pytest.fixture

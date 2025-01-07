@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: background
-          image: onyxdotapp/onyx-backend:latest
+          image: recapdotwork/recap-backend:latest
           imagePullPolicy: IfNotPresent
           command:
             - "/bin/sh"
@@ -28,7 +28,7 @@ spec:
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: onyx-secrets
+                  name: recap-secrets
                   key: redis_password
           envFrom:
             - configMapRef:

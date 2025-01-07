@@ -11,19 +11,19 @@ from langchain_core.messages import SystemMessage
 from langchain_core.messages import ToolCall
 from langchain_core.messages import ToolCallChunk
 
-from onyx.chat.answer import Answer
-from onyx.chat.models import AnswerStyleConfig
-from onyx.chat.models import CitationInfo
-from onyx.chat.models import LlmDoc
-from onyx.chat.models import OnyxAnswerPiece
-from onyx.chat.models import PromptConfig
-from onyx.chat.models import StreamStopInfo
-from onyx.chat.models import StreamStopReason
-from onyx.llm.interfaces import LLM
-from onyx.tools.force import ForceUseTool
-from onyx.tools.models import ToolCallFinalResult
-from onyx.tools.models import ToolCallKickoff
-from onyx.tools.models import ToolResponse
+from recap.chat.answer import Answer
+from recap.chat.models import AnswerStyleConfig
+from recap.chat.models import CitationInfo
+from recap.chat.models import LlmDoc
+from recap.chat.models import OnyxAnswerPiece
+from recap.chat.models import PromptConfig
+from recap.chat.models import StreamStopInfo
+from recap.chat.models import StreamStopReason
+from recap.llm.interfaces import LLM
+from recap.tools.force import ForceUseTool
+from recap.tools.models import ToolCallFinalResult
+from recap.tools.models import ToolCallKickoff
+from recap.tools.models import ToolResponse
 from tests.unit.onyx.chat.conftest import DEFAULT_SEARCH_ARGS
 from tests.unit.onyx.chat.conftest import QUERY
 

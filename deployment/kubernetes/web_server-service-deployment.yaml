@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: web-server
-          image: onyxdotapp/onyx-web-server:latest
+          image: recapdotwork/recap-web-server:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -37,7 +37,7 @@ spec:
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: onyx-secrets
+                  name: recap-secrets
                   key: redis_password
           envFrom:
             - configMapRef:

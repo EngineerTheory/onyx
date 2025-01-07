@@ -5,9 +5,9 @@ import httpx
 import pytest
 from sqlalchemy.orm import Session
 
-from onyx.db.engine import get_sqlalchemy_engine
-from onyx.document_index.document_index_utils import get_both_index_names
-from onyx.document_index.vespa_constants import DOCUMENT_ID_ENDPOINT
+from recap.db.engine import get_sqlalchemy_engine
+from recap.document_index.document_index_utils import get_both_index_names
+from recap.document_index.vespa_constants import DOCUMENT_ID_ENDPOINT
 
 
 @pytest.mark.skip()

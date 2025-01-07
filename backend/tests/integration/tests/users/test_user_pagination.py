@@ -1,5 +1,5 @@
-from onyx.auth.schemas import UserRole
-from onyx.server.models import FullUserSnapshot
+from recap.auth.schemas import UserRole
+from recap.server.models import FullUserSnapshot
 from tests.integration.common_utils.managers.user import UserManager
 from tests.integration.common_utils.test_models import DATestUser
 

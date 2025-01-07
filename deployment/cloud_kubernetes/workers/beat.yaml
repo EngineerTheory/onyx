@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
         - name: celery-beat
-          image: onyxdotapp/onyx-backend-cloud:v0.14.0-cloud.beta.21
+          image: recapdotwork/recap-backend-cloud:v0.14.0-cloud.beta.21
           imagePullPolicy: IfNotPresent
           command:
             [
               "celery",
               "-A",
-              "onyx.background.celery.versioned_apps.beat",
+              "recap.background.celery.versioned_apps.beat",
               "beat",
               "--loglevel=INFO",
             ]
@@ -28,7 +28,7 @@ spec:
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: onyx-secrets
+                  name: recap-secrets
                   key: redis_password
             - name: ONYX_VERSION
               value: "v0.11.0-cloud.beta.8"

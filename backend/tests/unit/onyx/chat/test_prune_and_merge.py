@@ -1,9 +1,9 @@
 import pytest
 
-from onyx.chat.prune_and_merge import _merge_sections
-from onyx.configs.constants import DocumentSource
-from onyx.context.search.models import InferenceChunk
-from onyx.context.search.models import InferenceSection
+from recap.chat.prune_and_merge import _merge_sections
+from recap.configs.constants import DocumentSource
+from recap.context.search.models import InferenceChunk
+from recap.context.search.models import InferenceSection
 
 
 # This large test accounts for all of the following:

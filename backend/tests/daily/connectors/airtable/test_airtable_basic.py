@@ -4,10 +4,10 @@ from unittest.mock import patch
 
 import pytest
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.airtable.airtable_connector import AirtableConnector
-from onyx.connectors.models import Document
-from onyx.connectors.models import Section
+from recap.configs.constants import DocumentSource
+from recap.connectors.airtable.airtable_connector import AirtableConnector
+from recap.connectors.models import Document
+from recap.connectors.models import Section
 
 
 @pytest.fixture(
@@ -125,7 +125,7 @@ def test_airtable_connector_basic(
             created_time="2024-12-24T21:02:49.000Z",
             status_last_changed="2024-12-24T21:02:49.000Z",
             days_since_status_change=0,
-            assignee="Chris Weaver (chris@onyx.app)",
+            assignee="Chris Weaver (chris@recap.work)",
             submitted_by="Chris Weaver (chris@onyx.app)",
         ),
         create_test_document(

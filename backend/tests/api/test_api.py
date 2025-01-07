@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 from fastapi.testclient import TestClient
 
-from onyx.main import fetch_versioned_implementation
-from onyx.utils.logger import setup_logger
+from recap.main import fetch_versioned_implementation
+from recap.utils.logger import setup_logger
 
 logger = setup_logger()
 
@@ -18,7 +18,7 @@ def client() -> Generator[TestClient, Any, None]:
 
     # Initialize TestClient with the FastAPI app
     app = fetch_versioned_implementation(
-        module="onyx.main", attribute="get_application"
+        module="recap.main", attribute="get_application"
     )()
     client = TestClient(app)
     yield client

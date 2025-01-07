@@ -20,7 +20,7 @@ spec:
             [
               "celery",
               "-A",
-              "onyx.background.celery.versioned_apps.heavy",
+              "recap.background.celery.versioned_apps.heavy",
               "worker",
               "--loglevel=INFO",
               "--hostname=heavy@%n",

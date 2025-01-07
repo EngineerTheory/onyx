@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 
-from onyx.connectors.models import Document
+from recap.connectors.models import Document
 
 ALL_FILES = list(range(0, 60))
 SHARED_DRIVE_FILES = list(range(20, 25))
@@ -53,10 +53,10 @@ SECTIONS_FOLDER_URL = (
     "https://drive.google.com/drive/u/5/folders/1loe6XJ-pJxu9YYPv7cF3Hmz296VNzA33"
 )
 
-ADMIN_EMAIL = "admin@onyx-test.com"
-TEST_USER_1_EMAIL = "test_user_1@onyx-test.com"
-TEST_USER_2_EMAIL = "test_user_2@onyx-test.com"
-TEST_USER_3_EMAIL = "test_user_3@onyx-test.com"
+ADMIN_EMAIL = "admin@recap-test.com"
+TEST_USER_1_EMAIL = "test_user_1@recap-test.com"
+TEST_USER_2_EMAIL = "test_user_2@recap-test.com"
+TEST_USER_3_EMAIL = "test_user_3@recap-test.com"
 
 # Dictionary for access permissions
 # All users have access to their own My Drive as well as public files

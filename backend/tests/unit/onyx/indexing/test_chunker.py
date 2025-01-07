@@ -1,10 +1,10 @@
 import pytest
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.models import Document
-from onyx.connectors.models import Section
-from onyx.indexing.chunker import Chunker
-from onyx.indexing.embedder import DefaultIndexingEmbedder
+from recap.configs.constants import DocumentSource
+from recap.connectors.models import Document
+from recap.connectors.models import Section
+from recap.indexing.chunker import Chunker
+from recap.indexing.embedder import DefaultIndexingEmbedder
 from tests.unit.onyx.indexing.conftest import MockHeartbeat
 
 

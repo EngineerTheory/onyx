@@ -14,8 +14,8 @@ import requests
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from onyx.configs.app_configs import DOCUMENT_INDEX_NAME  # noqa: E402
-from onyx.configs.constants import SOURCE_TYPE  # noqa: E402
+from recap.configs.app_configs import DOCUMENT_INDEX_NAME  # noqa: E402
+from recap.configs.constants import SOURCE_TYPE  # noqa: E402
 
 ANALYSIS_FOLDER = f"{parent_dir}/scripts/.analysisfiles/"
 

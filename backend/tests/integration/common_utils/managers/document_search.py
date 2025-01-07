@@ -1,10 +1,10 @@
 import requests
 
-from ee.onyx.server.query_and_chat.models import DocumentSearchRequest
-from onyx.context.search.enums import LLMEvaluationType
-from onyx.context.search.enums import SearchType
-from onyx.context.search.models import RetrievalDetails
-from onyx.context.search.models import SavedSearchDocWithContent
+from ee.recap.server.query_and_chat.models import DocumentSearchRequest
+from recap.context.search.enums import LLMEvaluationType
+from recap.context.search.enums import SearchType
+from recap.context.search.models import RetrievalDetails
+from recap.context.search.models import SavedSearchDocWithContent
 from tests.integration.common_utils.constants import API_SERVER_URL
 from tests.integration.common_utils.constants import GENERAL_HEADERS
 from tests.integration.common_utils.test_models import DATestUser

@@ -2,10 +2,10 @@ import textwrap
 
 import pytest
 
-from onyx.chat.stream_processing.quotes_processing import match_quotes_to_docs
-from onyx.chat.stream_processing.quotes_processing import separate_answer_quotes
-from onyx.configs.constants import DocumentSource
-from onyx.context.search.models import InferenceChunk
+from recap.chat.stream_processing.quotes_processing import match_quotes_to_docs
+from recap.chat.stream_processing.quotes_processing import separate_answer_quotes
+from recap.configs.constants import DocumentSource
+from recap.context.search.models import InferenceChunk
 
 
 def test_passed_in_quotes() -> None:

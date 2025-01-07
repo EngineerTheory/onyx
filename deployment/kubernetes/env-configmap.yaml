@@ -4,10 +4,10 @@ metadata:
   name: env-configmap
 data:
   # Auth Setting, also check the secrets file
-  AUTH_TYPE: "disabled" # Change this for production uses unless Onyx is only accessible behind VPN
+  AUTH_TYPE: "disabled" # Change this for production uses unless RECAP is only accessible behind VPN
   ENCRYPTION_KEY_SECRET: "" # This should not be specified directly in the yaml, this is just for reference
   SESSION_EXPIRE_TIME_SECONDS: "86400" # 1 Day Default
-  VALID_EMAIL_DOMAINS: "" # Can be something like onyx.app, as an extra double-check
+  VALID_EMAIL_DOMAINS: "" # Can be something like recap.work, as an extra double-check
   SMTP_SERVER: "" # For sending verification emails, if unspecified then defaults to 'smtp.gmail.com'
   SMTP_PORT: "" # For sending verification emails, if unspecified then defaults to '587'
   SMTP_USER: "" # 'your-email@company.com'
@@ -62,7 +62,7 @@ data:
   NOTION_CONNECTOR_ENABLE_RECURSIVE_PAGE_LOOKUP: ""
   MAX_DOCUMENT_CHARS: ""
   MAX_FILE_SIZE_BYTES: ""
-  # OnyxBot SlackBot Configs
+  # RECAPBot SlackBot Configs
   DANSWER_BOT_DISABLE_DOCS_ONLY_ANSWER: ""
   DANSWER_BOT_DISPLAY_ERROR_MSGS: ""
   DANSWER_BOT_RESPOND_EVERY_CHANNEL: ""
@@ -70,7 +70,7 @@ data:
   NOTIFY_SLACKBOT_NO_ANSWER: ""
   # Logging
   # Optional Telemetry, please keep it on (nothing sensitive is collected)? <3
-  # https://docs.onyx.app/more/telemetry
+  # https://docs.recap.work/more/telemetry
   DISABLE_TELEMETRY: ""
   LOG_LEVEL: ""
   LOG_ALL_MODEL_INTERACTIONS: ""

@@ -9,7 +9,7 @@ from litellm.types.utils import ChatCompletionDeltaToolCall
 from litellm.types.utils import Delta
 from litellm.types.utils import Function as LiteLLMFunction
 
-from onyx.llm.chat_llm import DefaultMultiLLM
+from recap.llm.chat_llm import DefaultMultiLLM
 
 
 def _create_delta(

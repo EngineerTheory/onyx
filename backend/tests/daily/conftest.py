@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 from fastapi.testclient import TestClient
 
-from onyx.main import fetch_versioned_implementation
-from onyx.utils.logger import setup_logger
+from recap.main import fetch_versioned_implementation
+from recap.utils.logger import setup_logger
 
 logger = setup_logger()
 

@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from onyx.configs.constants import DocumentSource
-from onyx.connectors.models import Document
-from onyx.connectors.zendesk.connector import ZendeskConnector
+from recap.configs.constants import DocumentSource
+from recap.connectors.models import Document
+from recap.connectors.zendesk.connector import ZendeskConnector
 
 
 def load_test_data(file_name: str = "test_zendesk_data.json") -> dict[str, dict]:

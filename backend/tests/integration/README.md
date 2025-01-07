@@ -11,9 +11,9 @@ The idea is that each test can use the manager class to create (.create()) a "te
 
 ## Instructions for Running Integration Tests Locally
 
-1. Launch onyx (using Docker or running with a debugger), ensuring the API server is running on port 8080.
-   a. If you'd like to set environment variables, you can do so by creating a `.env` file in the onyx/backend/tests/integration/ directory.
-2. Navigate to `onyx/backend`.
+1. Launch recap (using Docker or running with a debugger), ensuring the API server is running on port 8080.
+   a. If you'd like to set environment variables, you can do so by creating a `.env` file in the recap/backend/tests/integration/ directory.
+2. Navigate to `recap/backend`.
 3. Run the following command in the terminal:
    ```sh
    pytest -s tests/integration/tests/
