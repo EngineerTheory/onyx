@@ -5,12 +5,11 @@ import { User, UserRole } from "@/lib/types";
 import { getCurrentUser } from "@/lib/user";
 import { usePostHog } from "posthog-js/react";
 
-interface UserContextType {
+export interface UserContextType {
   user: User | null;
+  refreshUser: () => Promise<void>;
   isAdmin: boolean;
   isCurator: boolean;
-  refreshUser: () => Promise<void>;
-  isCloudSuperuser: boolean;
   updateUserAutoScroll: (autoScroll: boolean | null) => Promise<void>;
   updateUserShortcuts: (enabled: boolean) => Promise<void>;
   toggleAssistantPinnedStatus: (
@@ -21,16 +20,23 @@ interface UserContextType {
   updateUserTemperatureOverrideEnabled: (enabled: boolean) => Promise<void>;
 }
 
-const UserContext = createContext<UserContextType | undefined>(undefined);
+export const UserContext = createContext<UserContextType>({
+  user: null,
+  refreshUser: async () => {},
+  isAdmin: false,
+  isCurator: false,
+  updateUserAutoScroll: async (autoScroll: boolean | null) => {},
+  updateUserShortcuts: async (enabled: boolean) => {},
+  toggleAssistantPinnedStatus: async (
+    currentPinnedAssistantIDs: number[],
+    assistantId: number,
+    isPinned: boolean
+  ) => false,
+  updateUserTemperatureOverrideEnabled: async (enabled: boolean) => {}
+});
 
-export function UserProvider({
-  children,
-  user,
-}: {
-  children: React.ReactNode;
-  user: User | null;
-}) {
-  const [upToDateUser, setUpToDateUser] = useState<User | null>(user);
+export function UserProvider({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
 
   const posthog = usePostHog();
 
@@ -50,17 +56,18 @@ export function UserProvider({
     }
   }, [posthog, user]);
 
-  const fetchUser = async () => {
+  const refreshUser = async () => {
     try {
-      const currentUser = await getCurrentUser();
-      setUpToDateUser(currentUser);
+      const updatedUser = await getCurrentUser();
+      setUser(updatedUser);
     } catch (error) {
-      console.error("Error fetching current user:", error);
+      console.error("Failed to refresh user:", error);
     }
   };
+
   const updateUserTemperatureOverrideEnabled = async (enabled: boolean) => {
     try {
-      setUpToDateUser((prevUser) => {
+      setUser((prevUser) => {
         if (prevUser) {
           return {
             ...prevUser,
@@ -95,7 +102,7 @@ export function UserProvider({
 
   const updateUserShortcuts = async (enabled: boolean) => {
     try {
-      setUpToDateUser((prevUser) => {
+      setUser((prevUser) => {
         if (prevUser) {
           return {
             ...prevUser,
@@ -137,7 +144,7 @@ export function UserProvider({
         },
         body: JSON.stringify({ auto_scroll: autoScroll }),
       });
-      setUpToDateUser((prevUser) => {
+      setUser((prevUser) => {
         if (prevUser) {
           return {
             ...prevUser,
@@ -164,7 +171,7 @@ export function UserProvider({
     assistantId: number,
     isPinned: boolean
   ) => {
-    setUpToDateUser((prevUser) => {
+    setUser((prevUser) => {
       if (!prevUser) return prevUser;
       return {
         ...prevUser,
@@ -209,25 +216,20 @@ export function UserProvider({
     }
   };
 
-  const refreshUser = async () => {
-    await fetchUser();
-  };
-
   return (
     <UserContext.Provider
       value={{
-        user: upToDateUser,
+        user,
         refreshUser,
         updateUserAutoScroll,
         updateUserShortcuts,
         updateUserTemperatureOverrideEnabled,
         toggleAssistantPinnedStatus,
-        isAdmin: upToDateUser?.role === UserRole.ADMIN,
-        // Curator status applies for either global or basic curator
+        isAdmin: user?.role === UserRole.ADMIN,
         isCurator:
-          upToDateUser?.role === UserRole.CURATOR ||
-          upToDateUser?.role === UserRole.GLOBAL_CURATOR,
-        isCloudSuperuser: upToDateUser?.is_cloud_superuser ?? false,
+          user?.role === UserRole.CURATOR ||
+          user?.role === UserRole.GLOBAL_CURATOR,
+        isCloudSuperuser: user?.is_cloud_superuser ?? false,
       }}
     >
       {children}

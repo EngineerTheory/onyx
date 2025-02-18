@@ -63,3 +63,18 @@ export const basicSignup = async (
   });
   return response;
 };
+
+export const updateUserWhatsAppPhone = async (
+  phoneNumber: string | null
+): Promise<Response> => {
+  const response = await fetch("/api/whatsapp/user/phone", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      whatsapp_phone_number: phoneNumber,
+    }),
+  });
+  return response;
+};

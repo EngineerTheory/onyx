@@ -204,6 +204,11 @@ class User(SQLAlchemyBaseUserTableUUID, Base):
         primaryjoin="User.id == foreign(ConnectorCredentialPair.creator_id)",
     )
 
+    # WhatsApp integration
+    whatsapp_phone_number: Mapped[str | None] = mapped_column(
+        String, nullable=True, unique=True
+    )
+
 
 class AccessToken(SQLAlchemyBaseAccessTokenTableUUID, Base):
     pass
@@ -1807,6 +1812,65 @@ class SlackBot(Base):
         cascade="all, delete-orphan",
     )
 
+
+class WhatsAppBot(Base):
+    __tablename__ = "whatsapp_bot"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String)
+    enabled: Mapped[bool] = mapped_column(Boolean, default=True)
+
+    phone_number_id: Mapped[str] = mapped_column(EncryptedString(), unique=True)
+    access_token: Mapped[str] = mapped_column(EncryptedString(), unique=True)
+    webhook_token: Mapped[str] = mapped_column(EncryptedString(), unique=True)
+
+    whatsapp_chat_configs: Mapped[list["WhatsAppChatConfig"]] = relationship(
+        "WhatsAppChatConfig",
+        back_populates="whatsapp_bot",
+        cascade="all, delete-orphan",
+    )
+
+
+class WhatsAppChatConfig(Base):
+    __tablename__ = "whatsapp_chat_config"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    whatsapp_bot_id: Mapped[int] = mapped_column(
+        ForeignKey("whatsapp_bot.id"), nullable=False
+    )
+    persona_id: Mapped[int | None] = mapped_column(
+        ForeignKey("persona.id"), nullable=True
+    )
+    chat_id: Mapped[str] = mapped_column(String)
+    chat_name: Mapped[str | None] = mapped_column(String, nullable=True)
+    chat_type: Mapped[str] = mapped_column(String)  # individual/group
+    
+    enable_auto_filters: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, default=False
+    )
+
+    is_default: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+
+    persona: Mapped[Persona | None] = relationship("Persona")
+    whatsapp_bot: Mapped["WhatsAppBot"] = relationship(
+        "WhatsAppBot",
+        back_populates="whatsapp_chat_configs",
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "whatsapp_bot_id",
+            "is_default",
+            name="uq_whatsapp_chat_config_whatsapp_bot_id_default",
+        ),
+        Index(
+            "ix_whatsapp_chat_config_whatsapp_bot_id_default",
+            "whatsapp_bot_id",
+            "is_default",
+            unique=True,
+            postgresql_where=(is_default is True),  # type: ignore
+        ),
+    )
 
 class Milestone(Base):
     # This table is used to track significant events for a deployment towards finding value

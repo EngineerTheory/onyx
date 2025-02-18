@@ -59,6 +59,7 @@ export interface User {
   is_cloud_superuser?: boolean;
   organization_name: string | null;
   is_anonymous_user?: boolean;
+  whatsapp_phone_number?: string | null;
 }
 
 export interface AllUsersResponse {
@@ -147,7 +148,6 @@ export interface ConnectorIndexingStatus<
   ConnectorConfigType,
   ConnectorCredentialType,
 > extends ConnectorStatus<ConnectorConfigType, ConnectorCredentialType> {
-  // Inlcude data only necessary for indexing statuses in admin page
   last_success: string | null;
   last_status: ValidStatuses | null;
   last_finished_status: ValidStatuses | null;
@@ -189,15 +189,12 @@ export type ConnectorSummary = {
 
 export type GroupedConnectorSummaries = Record<ValidSources, ConnectorSummary>;
 
-// DELETION
-
 export interface DeletionAttemptSnapshot {
   connector_id: number;
   credential_id: number;
   status: TaskStatus;
 }
 
-// DOCUMENT SETS
 export interface CCPairDescriptor<ConnectorType, CredentialType> {
   id: number;
   name: string | null;
@@ -223,7 +220,6 @@ export interface Tag {
   source: ValidSources;
 }
 
-// STANDARD ANSWERS
 export interface StandardAnswerCategory {
   id: number;
   name: string;
@@ -237,8 +233,6 @@ export interface StandardAnswer {
   match_any_keywords: boolean;
   categories: StandardAnswerCategory[];
 }
-
-// SLACK BOT CONFIGS
 
 export type AnswerFilterOption =
   | "well_answered_postfilter"
@@ -293,7 +287,6 @@ export interface SlackBotTokens {
   app_token: string;
 }
 
-/* EE Only Types */
 export interface UserGroup {
   id: number;
   name: string;
@@ -362,7 +355,6 @@ export const validAutoSyncSources = [
   ValidSources.Salesforce,
 ] as const;
 
-// Create a type from the array elements
 export type ValidAutoSyncSource = (typeof validAutoSyncSources)[number];
 
 export type ConfigurableSources = Exclude<
@@ -372,8 +364,4 @@ export type ConfigurableSources = Exclude<
 
 export const oauthSupportedSources: ConfigurableSources[] = [
   ValidSources.Slack,
-  // NOTE: temporarily disabled until our GDrive App is approved
-  // ValidSources.GoogleDrive,
 ];
-
-export type OAuthSupportedSource = (typeof oauthSupportedSources)[number];
