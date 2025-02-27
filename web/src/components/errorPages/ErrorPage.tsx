@@ -17,7 +17,7 @@ export default function Error() {
           If you&apos;re an admin, please review our{" "}
           <a
             className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-            href="https://docs.onyx.app/introduction?utm_source=app&utm_medium=error_page&utm_campaign=config_error"
+            href="https://docs.recap.work/introduction?utm_source=app&utm_medium=error_page&utm_campaign=config_error"
             target="_blank"
             rel="noopener noreferrer"
           >

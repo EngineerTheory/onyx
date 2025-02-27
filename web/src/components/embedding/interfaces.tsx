@@ -178,7 +178,7 @@ export const AVAILABLE_CLOUD_PROVIDERS: CloudEmbeddingProvider[] = [
     provider_type: EmbeddingProvider.COHERE,
     website: "https://cohere.ai",
     icon: CohereIcon,
-    docsLink: "https://docs.onyx.app/guides/embedding_providers#cohere-models",
+    docsLink: "https://docs.recap.work/guides/embedding_providers#cohere-models",
     description:
       "AI company specializing in NLP models for various text-based tasks",
     apiLink: "https://dashboard.cohere.ai/api-keys",
@@ -220,7 +220,7 @@ export const AVAILABLE_CLOUD_PROVIDERS: CloudEmbeddingProvider[] = [
     icon: OpenAIISVG,
     description: "AI industry leader known for ChatGPT and DALL-E",
     apiLink: "https://platform.openai.com/api-keys",
-    docsLink: "https://docs.onyx.app/guides/embedding_providers#openai-models",
+    docsLink: "https://docs.recap.work/guides/embedding_providers#openai-models",
     costslink: "https://openai.com/pricing",
     embedding_models: [
       {
@@ -259,7 +259,7 @@ export const AVAILABLE_CLOUD_PROVIDERS: CloudEmbeddingProvider[] = [
     website: "https://ai.google",
     icon: GoogleIcon,
     docsLink:
-      "https://docs.onyx.app/guides/embedding_providers#vertex-ai-google-model",
+      "https://docs.recap.work/guides/embedding_providers#vertex-ai-google-model",
     description:
       "Offers a wide range of AI services including language and vision models",
     apiLink: "https://console.cloud.google.com/apis/credentials",
@@ -298,7 +298,7 @@ export const AVAILABLE_CLOUD_PROVIDERS: CloudEmbeddingProvider[] = [
     website: "https://www.voyageai.com",
     icon: VoyageIconSVG,
     description: "Advanced NLP research startup born from Stanford AI Labs",
-    docsLink: "https://docs.onyx.app/guides/embedding_providers#voyage-models",
+    docsLink: "https://docs.recap.work/guides/embedding_providers#voyage-models",
     apiLink: "https://www.voyageai.com/dashboard",
     costslink: "https://www.voyageai.com/pricing",
     embedding_models: [

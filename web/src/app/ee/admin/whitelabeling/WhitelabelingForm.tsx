@@ -202,7 +202,7 @@ export function WhitelabelingForm() {
                 <Text>
                   Read{" "}
                   <Link
-                    href={"https://docs.onyx.app/enterprise_edition/theming"}
+                    href={"https://docs.recap.work/enterprise_edition/theming"}
                     className="text-link cursor-pointer"
                   >
                     the docs

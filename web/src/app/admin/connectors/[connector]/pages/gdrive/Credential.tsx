@@ -285,7 +285,7 @@ export const DriveJsonUploadSection = ({
         <a
           className="text-link"
           target="_blank"
-          href="https://docs.onyx.app/connectors/google_drive#authorization"
+          href="https://docs.recap.work/connectors/google_drive#authorization"
           rel="noreferrer"
         >
           here

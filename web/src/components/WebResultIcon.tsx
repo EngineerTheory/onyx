@@ -18,11 +18,11 @@ export function WebResultIcon({
     hostname = new URL(url).hostname;
   } catch (e) {
     // console.log(e);
-    hostname = "docs.onyx.app";
+    hostname = "docs.recap.work";
   }
   return (
     <>
-      {hostname == "docs.onyx.app" ? (
+      {hostname == "docs.recap.work" ? (
         <OnyxIcon size={size} className="dark:text-[#fff] text-[#000]" />
       ) : !error ? (
         <img
